@@ -3,7 +3,7 @@
 This project is an implementation of a University of Washington | Bothell (UWB), School of Science, Technology, Engineering, & Mathematics (STEM), Graduate Certificate in Software Design and Development (GCSDD), Prerequisite Sample Coursework number three of four.
 
 ## Wumpus Mountain
-Written in June 2023, this is a sample assignment from UWB Computing & Software Systems (CSS) 143: Programming Competency Self-Assessment: Third Assessment -- "Wumpus Mountain," an exercise in trees, stacks, and use of non-recusive techniques. See "CSS143-SampleCoursework.pdf" for the program specification.
+Written in June 2023, this is a sample assignment from UWB Computing & Software Systems (CSS) 143, Programming Competency Self-Assessment: Third Assessment -- "Wumpus Mountain," an exercise in trees, stacks, and the use of non-recursive techniques. See "CSS143-SampleCoursework.pdf" for the program specification.
 
 *Note: implemented in C++ rather than Java as per GCSDD curriculum.*
 
