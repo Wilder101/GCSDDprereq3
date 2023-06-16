@@ -12,7 +12,7 @@
 *   Programming Competency Self-Assessment: First Assessment (three of four)
 *   "Wumpus Mountain"
 *
-*   BinaryMountainFactoryComplex.h
+*   MountainFactory.h
 */
 
 #include "MountainCave.h"

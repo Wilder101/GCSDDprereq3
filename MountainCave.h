@@ -44,127 +44,40 @@ class MountainCave
 {
     // The following are accessors for your Hunter
   public:
+    string getCaveName();
+    vector<MountainCave*> getChildren();
+    string getCaveMessage();
+    bool hasScales();
+    bool isAdjacentToScales();
 
-     string getCaveName() 
-     {
-        return caveName;
-     }
-
-     vector<MountainCave*> getChildren()
-    {
-        return children;
-    }
-
-    string getCaveMessage() 
-    {
-        return caveMessage;
-    }
-
-    bool hasScales() 
-    {
-        return hasWumpusScales;
-    }
-
-    bool isAdjacentToScales() 
-    {
-        return adjacentToScales;
-    }
-
-    // Next, we have methods that we call from a MountFactory:
-
+    // Next, we have methods that we call from a MountainFactory:
     /**
      * This is the preferred constructor to use. It "attaches" the
      * cave to its parent (and the parent to its child) and assigns it
      * a name and description. The other constructors are near the end
      * of the class.
      */
-
-    MountainCave(MountainCave* theParent, string name, string message) 
-        : MountainCave(name, message)
-    {
-        if (theParent != nullptr) 
-        {
-            parent = theParent;     
-            parent->addChild(this);
-        }
-    }
-
-    void setAdjacentToScales(bool adjacentToScales)
-    {
-        this->adjacentToScales = adjacentToScales;
-    }
-
-    void setHasScales(bool hasWumpusScales) 
-    {
-        this->hasWumpusScales = hasWumpusScales;
-    }
-
-    void setCaveMessage(string caveName) 
-    {
-        this->caveName = caveName;
-    }
+    MountainCave(MountainCave* theParent, string name, string message);
+    void setAdjacentToScales(bool adjacentToScales);
+    void setHasScales(bool hasWumpusScales);
+    void setCaveMessage(string caveName);
 
     // And finally, methods that are used internally and that you are
     // unlikely to need to use.
-
-    MountainCave(string name, string message) 
-    {
-        caveName = name;
-        caveMessage = message;
-    }
-
-    MountainCave(string name) 
-        : MountainCave(name, "")
-    {
-        // nothing else to do
-    }
-
-    void setParent(MountainCave* theParent) 
-    {
-        parent = theParent;
-        parent->addChild(this);
-    }
-
-    void addChild(MountainCave* next) 
-    {
-        if (next != nullptr) 
-        {
-            children.push_back(next);
-        }
-    }
-
-    MountainCave* getParent() 
-    {
-        return parent;
-    }
-
-    bool hasParent()
-    {
-        if (parent == nullptr) 
-        {
-            return false;
-        }
-        return true;
-    }
+    MountainCave(string name, string message);
+    MountainCave(string name);
+    void setParent(MountainCave* theParent);
+    void addChild(MountainCave* next);
+    MountainCave* getParent();
+    bool hasParent();
 
     // Wilder addition to the class
-    bool hasChildren()
-	{
-		if (children.size() == 0) 
-		{
-			return false;
-		}
-		return true;
-	}
+    bool hasChildren();
 
     // Wilder addition to the class
-    int getNumberOfChildren()
-    {
-        return int (children.size());    // explicit cast size_t to int
-    }
+    int getNumberOfChildren();
 
   private:
-
     //node structure pointers
     MountainCave* parent = nullptr;
     vector<MountainCave*> children;
@@ -174,5 +87,4 @@ class MountainCave
     string caveName;
     bool adjacentToScales = false;
     bool hasWumpusScales = false;
-
 };  
